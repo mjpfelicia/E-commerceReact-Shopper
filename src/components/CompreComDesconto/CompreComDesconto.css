@@ -1,0 +1,122 @@
+.box1-desconto {
+    background-image: url('../../img/prudu1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    width: 50%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.box2-desconto {
+    background-image: url('../../img//chegada4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    width: 50%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #fff;
+}
+
+.selo-desconto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    top: 1em;
+    left: 30em;
+    background-color: #ff6f61;
+    /* tom coral vibrante */
+    border-radius: 50%;
+    /* formato circular */
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+
+.box-compre-com-desconto {
+    display: flex;
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+    flex-wrap: nowrap;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+
+.conteudo-desconto {
+    text-align: right;
+}
+
+.detalhe-desc {
+    font-size: 1rem;
+    color: white;
+    margin: 0;
+}
+
+.desc-detalhe {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+}
+
+.produto-desconto h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: red!important;
+}
+
+.svg-black {
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+}
+
+
+.produto-desconto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 8em;
+    color: #111;
+    background-color: #fff;
+    position: relative;
+    left: 5em;
+    top: 21px;
+}

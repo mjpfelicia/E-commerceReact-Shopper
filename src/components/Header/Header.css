@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+
+/* ===== Logo e Cabeçalho ===== */
+.logo-happy {
+  height: var(--height-logo);
+  background-image: url(../../img/menu.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: var(--padding-top-header) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulo-happy {
+  color: var(--color-text-header);
+  text-align: center;
+  font-family: var(--font-family-base);
+}
+
+/* ===== Ícones mobile ===== */
+.img-mobile {
+  width: 30px;
+  display: none;
+}
+
+/* ===== Menu ===== */
+.menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  background-color: var(--color-bg-menu);
+}
+
+ul {
+  display: flex;
+  gap: 20px !important;
+  padding: 0;
+  margin: 0;
+}
+
+/* ===== Itens de menu ===== */
+li {
+  font-size: 1.2em;
+  font-weight: var(--font-weight-regular);
+  font-family: var(--font-family-base);
+  color: var(--color-text-menu);
+}
+
+.titulo-shopper {
+  font-size: 2em;
+  font-weight: var(--font-weight-black);
+  font-family: var(--font-family-base);
+  color: var(--color-secondary);
+}
+
+.hover-red:hover {
+  color: var(--color-hover);
+  cursor: pointer;
+}
+
+/* ===== Ícones no header ===== */
+.icon-header {
+  cursor: pointer;
+  margin-top: .9em;
+}
+
+.icon-header:hover {
+  color: var(--color-primary);
+}
+
+.icon-header img {
+  width: 20px;
+  height: 15px;
+}
+
+/* ===== Dropdown ===== */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  border: none;
+  background-color: var(--color-bg-menu);
+  color: var(--color-text-menu);
+  font-family: var(--font-family-base);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Seta com CSS */
+.arrow {
+  border: solid var(--color-text-menu);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  margin-left: 4px;
+  transform: rotate(45deg);
+  vertical-align: middle;
+}
+
+/* Dropdown conteúdo */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: 5px;
+  min-width: 160px;
+  background-color: #f9f9f9;
+  box-shadow: var(--shadow-dropdown);
+  border-radius: var(--border-radius);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  color: #a6a6a6;
+}
+
+.dropdown-content a:hover {
+  background-color: #eee;
+}
+
+/* Mostrar dropdown ao hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 600px) {
+  .menu-display {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .img-mobile {
+    display: block;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  ul {
+    flex-direction: column;
+    gap: 10px !important;
+  }
+
+  li {
+    font-size: 1.5em;
+  }
+}

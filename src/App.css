@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+/* App.css - Variáveis e configurações globais */
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Cores principais */
+    --color-primary: #ff6f61;          /* Coral / Vermelho suave */
+    --color-secondary: #111111;        /* Preto quase total */
+    --color-bg-header: #ffc107;        /* Amarelo do Bootstrap warning */
+    --color-text-header: #ffffff;      /* Branco */
+    --color-bg-menu: #ffffff;          /* Branco para menu */
+    --color-text-menu: #111111;        /* Texto escuro para menu */
+    --color-hover: var(--color-primary); /* Cor hover para links */
+
+    /* Fontes */
+    --font-family-base: 'Jost', sans-serif;
+
+    /* Tamanhos e espaçamentos */
+    --padding-top-header: 20px;
+    --padding-bottom-header: 20px;
+    --padding-top-menu: 10px;
+    --padding-sides: 1rem;
+    --height-logo: 50px;
+
+    --font-size-base: 16px;
+    --font-weight-regular: 400;
+    --font-weight-bold: 600;
+    --font-weight-black: 800;
+
+    /* Sombras */
+    --shadow-header: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-dropdown: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+    /* Bordas */
+    --border-radius: 4px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Reset básico */
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-base);
+    color: var(--color-secondary);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--font-family-base);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Links globais */
+
+a {
+    color: var(--color-text-menu);
+    text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+a:hover {
+    color: var(--color-hover);
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Botões globais */
+
+button {
+    font-family: var(--font-family-base);
+    cursor: pointer;
+}
+
+/* Estilos globais para listas */
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }

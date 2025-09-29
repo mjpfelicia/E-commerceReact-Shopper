@@ -1,0 +1,54 @@
+.compre-por-categoria {
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.header-categoria {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    flex-direction: column;
+}
+
+.titulo-categoria {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.link-categoria a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.link-categoria a:hover {
+    color: red;
+}
+
+.box-categorias .item {
+    text-align: center;
+    padding: 10px;
+}
+
+.box-categorias img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.descricao-item-categoria {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+
+}
+
+.item-small {
+    color: red;
+    font-size: 0.9rem;
+}
