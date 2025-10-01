@@ -2,6 +2,8 @@
 
 Este projeto é um e-commerce desenvolvido em React, criado com [Create React App](https://github.com/mjpfelicia).
 
+![Texto alternativo da imagem](./src/img/tela.png)
+
 ## Funcionalidades
 
 - **Catálogo de produtos**: Visualize produtos em um layout de grade ou carrossel.
