@@ -165,11 +165,18 @@ const Header = () => {
             </div>
           </li>
           <li>
-            <div class="dropdown">
-              <button class="dropbtn">USD <span class="arrow"></span></button>
-              <div class="dropdown-content">
-                <a href="#">USD</a>
-                <a href="#">EUR</a>
+            <div className="dropdown">
+              <button
+                className="dropbtn"
+                onClick={() => toggleDropdown("currency")}
+              >
+                USD <span className="arrow"></span>
+              </button>
+              <div className="dropdown-content">
+                <a href="#!">USD</a>
+                <a href="#!">EUR</a>
+                <a href="#!">GBP</a>
+              
               </div>
             </div>
           </li>

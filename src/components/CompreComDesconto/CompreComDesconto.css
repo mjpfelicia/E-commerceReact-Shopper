@@ -36,12 +36,8 @@
     position: relative;
     width: 100px;
     height: 100px;
-    top: 1em;
-    left: 30em;
     background-color: #ff6f61;
-    /* tom coral vibrante */
     border-radius: 50%;
-    /* formato circular */
     color: #fff;
     font-weight: bold;
     font-size: 1rem;
@@ -97,7 +93,9 @@
 }
 
 .btn:hover {
-    background-color: red!important;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+
 }
 
 .svg-black {

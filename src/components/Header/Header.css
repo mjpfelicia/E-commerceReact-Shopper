@@ -31,6 +31,7 @@
   align-items: center;
   height: 100px;
   background-color: var(--color-bg-menu);
+  text-transform: uppercase;
 }
 
 ul {
@@ -42,7 +43,6 @@ ul {
 
 /* ===== Itens de menu ===== */
 li {
-  font-size: 1.2em;
   font-weight: var(--font-weight-regular);
   font-family: var(--font-family-base);
   color: var(--color-text-menu);
@@ -82,7 +82,7 @@ li {
 }
 
 .dropbtn {
-  padding: 16px;
+  padding: 10px;
   font-size: 16px;
   font-weight: 400;
   border: none;

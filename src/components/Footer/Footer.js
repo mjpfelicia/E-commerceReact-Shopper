@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Footer.css';
+import { FaFacebookSquare, FaYoutube, FaTwitter, FaInstagram, FaLinkedin, FaMedium } from 'react-icons/fa';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -12,36 +13,12 @@ const Footer = () => {
   };
 
   const redesSociais = [
-    { 
-      icon: '/img/facebook-square-brands.svg', 
-      href: "https://facebook.com", 
-      label: "Facebook"
-    },
-    { 
-      icon: '/img/youtube-square-brands.svg', 
-      href: "https://youtube.com", 
-      label: "YouTube"
-    },
-    { 
-      icon: '/img/twitter-brands.svg', 
-      href: "https://twitter.com", 
-      label: "Twitter"
-    },
-    { 
-      icon: '/img/instagram-brands.svg', 
-      href: "https://instagram.com", 
-      label: "Instagram"
-    },
-    { 
-      icon: '/img/linkedin-brands.svg', 
-      href: "https://linkedin.com", 
-      label: "LinkedIn"
-    },
-    { 
-      icon: '/img/medium-m-brands.svg', 
-      href: "https://medium.com", 
-      label: "Medium"
-    }
+    { icon: <FaFacebookSquare />, href: "https://facebook.com", label: "Facebook" },
+    { icon: <FaYoutube />, href: "https://youtube.com", label: "YouTube" },
+    { icon: <FaTwitter />, href: "https://twitter.com", label: "Twitter" },
+    { icon: <FaInstagram />, href: "https://instagram.com", label: "Instagram" },
+    { icon: <FaLinkedin />, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: <FaMedium />, href: "https://medium.com", label: "Medium" }
   ];
 
   const colunas = [
@@ -88,11 +65,11 @@ const Footer = () => {
         <h5>Quer ideias e guloseimas de estilo?</h5>
         <form className="conteudo-footer_1" onSubmit={handleSubmit}>
           <div className="nav-input">
-            <input 
-              type="email" 
-              placeholder="Digite seu email*" 
-              id="btn_email" 
-              required 
+            <input
+              type="email"
+              placeholder="Digite seu email*"
+              id="btn_email"
+              required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -104,20 +81,21 @@ const Footer = () => {
           </div>
         </form>
       </div>
-      
+
       <div className="box-coluna-footer_1">
         <div className="content-coluna-icons">
           <h3>Shopper.</h3>
           <nav aria-label="Redes sociais">
             {redesSociais.map((rede, index) => (
-              <a 
+              <a
                 key={index}
-                href={rede.href} 
+                href={rede.href}
                 aria-label={rede.label}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
+                className="icon-social"
               >
-                <img src={rede.icon} alt={rede.label} />
+                {rede.icon}
               </a>
             ))}
           </nav>

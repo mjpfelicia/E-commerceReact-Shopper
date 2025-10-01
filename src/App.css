@@ -4,15 +4,21 @@
 
 :root {
     /* Cores principais */
-    --color-primary: #ff6f61;          /* Coral / Vermelho suave */
-    --color-secondary: #111111;        /* Preto quase total */
-    --color-bg-header: #ffc107;        /* Amarelo do Bootstrap warning */
-    --color-text-header: #ffffff;      /* Branco */
-    --color-bg-menu: #ffffff;          /* Branco para menu */
-    --color-text-menu: #111111;        /* Texto escuro para menu */
-    --color-hover: var(--color-primary); /* Cor hover para links */
+    --color-primary: #ff6f61;
+    /* Coral / Vermelho suave */
+    --color-secondary: #111111;
+    /* Preto quase total */
+    --color-bg-header: #ffc107;
+    /* Amarelo do Bootstrap warning */
+    --color-text-header: #ffffff;
+    /* Branco */
+    --color-bg-menu: #ffffff;
+    /* Branco para menu */
+    --color-text-menu: #111111;
+    /* Texto escuro para menu */
+    --color-hover: var(--color-primary);
+    /* Cor hover para links */
 
-    /* Fontes */
     --font-family-base: 'Jost', sans-serif;
 
     /* Tamanhos e espaçamentos */
@@ -33,6 +39,12 @@
 
     /* Bordas */
     --border-radius: 4px;
+}
+
+
+body, html {
+    box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Reset básico */
@@ -77,12 +89,4 @@ a:hover {
 button {
     font-family: var(--font-family-base);
     cursor: pointer;
-}
-
-/* Estilos globais para listas */
-
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }

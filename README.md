@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# Shopper - E-commerce React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto é um e-commerce desenvolvido em React, criado com [Create React App](https://github.com/mjpfelicia).
 
-## Available Scripts
+## Funcionalidades
 
-In the project directory, you can run:
+- **Catálogo de produtos**: Visualize produtos em um layout de grade ou carrossel.
+- **Novas chegadas**: Carrossel de produtos recém-adicionados.
+- **Seção de looks**: Destaque de combinações de produtos (verão perfeito).
+- **Blog**: Últimas postagens do blog.
+- **Footer informativo**: Links úteis, newsletter e redes sociais.
 
-### `npm start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React
+- CSS3
+- React Icons (para ícones)
+- Create React App (ambiente de desenvolvimento)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Como Executar o Projeto
 
-### `npm test`
+### Pré-requisitos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (versão 14 ou superior)
+- npm ou yarn
 
-### `npm run build`
+### Passos
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone o repositório:
+   \`\`\`bash
+   git clone <URL_DO_REPOSITORIO>
+   \`\`\`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Entre no diretório do projeto:
+   \`\`\`bash
+   cd ecommerce
+   \`\`\`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Instale as dependências:
+   \`\`\`bash
+   npm install
+   \`\`\`
 
-### `npm run eject`
+4. Execute o projeto em modo de desenvolvimento:
+   \`\`\`bash
+   npm start
+   \`\`\`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Abra [http://localhost:3000](http://localhost:3000) para visualizar no browser.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Scripts Disponíveis
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+No diretório do projeto, você pode rodar:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### \`npm start\`
 
-## Learn More
+Roda o app em modo de desenvolvimento.\
+Abra [http://localhost:3000](http://localhost:3000) para visualizar no browser.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+A página irá recarregar se você fizer edições.\
+Você também verá erros de lint no console.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### \`npm test\`
 
-### Code Splitting
+Inicia o executor de testes no modo interativo.\
+Veja a seção sobre [executando testes](https://github.com/mjpfelicia) para mais informações.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### \`npm run build\`
 
-### Analyzing the Bundle Size
+Constroi o app para produção na pasta \`build\`.\
+Ele empacota corretamente o React em modo de produção e otimiza a build para melhor performance.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+A build é minificada e os nomes dos arquivos incluem hashes.\
+Seu app está pronto para ser deployado!
 
-### Making a Progressive Web App
+Veja a seção sobre [deploy](https://github.com/mjpfelicia) para mais informações.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### \`npm run eject\`
 
-### Advanced Configuration
+**Nota: esta é uma operação irreversível. Uma vez feito \`eject\`, você não pode voltar!**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Se você não estiver satisfeito com as ferramentas de build e configurações, você pode fazer \`eject\` a qualquer momento. Este comando removerá a dependência de build do seu projeto.
 
-### Deployment
+Em vez disso, ele copiará todos os arquivos de configuração e dependências transitivas (webpack, Babel, ESLint, etc) direto para o seu projeto, para que você tenha controle total sobre eles. Todos os comandos, exceto \`eject\`, ainda funcionarão, mas apontarão para os scripts copiados, então você pode ajustá-los. Neste momento, você está por conta própria.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Você nunca é obrigado a usar \`eject\`. O conjunto de funcionalidades curadas é adequado para deploys pequenos e médios, e você não deve se sentir obrigado a usar esta funcionalidade. No entanto, entendemos que esta ferramenta não seria útil se você não pudesse customizá-la quando estiver pronto.
 
-### `npm run build` fails to minify
+## Estrutura de Pastas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+\`\`\`
+src/
+  components/
+    NovasChegadas/       # Carrossel de novos produtos
+    VeraoPerfeito/       # Seção de looks de verão
+    UltimoBlog/          # Últimas postagens do blog
+    DetalheEntregas/     # Seção de benefícios (frete, devoluções, etc.)
+    Footer/              # Rodapé com links e newsletter
+    img                  # Imagens do projeto
+    icons/               # Ícones em SVG
+  App.js                 # Componente principal
+  index.js               # Ponto de entrada
+\`\`\`
+
+## Status do Projeto
+
+🚧 Em desenvolvimento 🚧
+
+## Próximos Passos
+
+- [ ] Implementar carrinho de compras
+- [ ] Integração com API de produtos
+- [ ] Páginas de produto individual
+- [ ] Sistema de checkout
+- [ ] Autenticação de usuários
+
+ - ## mjpfelicia
