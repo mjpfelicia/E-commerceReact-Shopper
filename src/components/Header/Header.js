@@ -43,19 +43,23 @@ const Header = () => {
           <li>
             <div className="dropdown">
               <button
-                className="dropbtn hover-red"
+                className="dropbtn hover-red" 
                 onClick={() => toggleDropdown("home")}
               >
                 Home
               </button>
               <div className={`dropdown-content ${openDropdown === "home" ? "show" : ""}`}>
-                <a href="#!">Classic</a>
-                <a href="#!">Fashion</a>
-                <a href="#!">Boxed</a>
-                <a href="#!">Simple</a>
-                <a href="#!">Asymmetric</a>
-                <a href="#!">Sidenav</a>
-                <a href="#!">Landing</a>
+                <a href="#!">Main Home</a>
+                <a href="#!">Fashion Home</a>
+                <a href="#!">Furniture Home</a>
+                <a href="#!">Electronics Home</a>
+                <a href="#!">Beauty Home</a>
+                <a href="#!">Kids Home</a>
+                <a href="#!">Sport Home</a>
+                <a href="#!">Book Store</a>
+                <a href="#!">Music Store</a>
+                <a href="#!">Flower Shop</a>
+                <a href="#!">Single Product</a>
               </div>
             </div>
           </li>
@@ -68,30 +72,15 @@ const Header = () => {
                 Catalog
               </button>
               <div className={`dropdown-content ${openDropdown === "catalog" ? "show" : ""}`}>
-                <a href="#!">Mulheres</a>
-                <a href="#!">Confecções</a>
-                <a href="#!">Sapato</a>
-                <a href="#!">Vestidos</a>
-                <a href="#!">Bolsas</a>
-                <a href="#!">Acessórios</a>
-                <a href="#!">Óculos escuros</a>
-                <a href="#!">Jeans</a>
-                <a href="#!">Botas</a>
-                <a href="#!">Jóia</a>
-
-                <div className="conte-drop-catalago">
-                  <a href="#!">Homens</a>
-                  <a href="#!">Confecções</a>
-                  <a href="#!">Sapato</a>
-                  <a href="#!">Bolsas</a>
-                  <a href="#!">Acessórios</a>
-                  <a href="#!">Vestidos</a>
-                  <a href="#!">Óculos escuros</a>
-                  <a href="#!">Jeans</a>
-                  <a href="#!">Tênis</a>
-                  <a href="#!">Watche</a>
-                </div>
+                <a href="#!">Shop Grid</a>
+                <a href="#!">Shop List</a>
+                <a href="#!">Shop Right Sidebar</a>
+                <a href="#!">Product Details</a>
+                <a href="#!">Product Variable</a>
+                <a href="#!">Product Grouped</a>
+                <a href="#!">Product Affiliate</a>
               </div>
+
             </div>
           </li>
           <li>
@@ -103,27 +92,32 @@ const Header = () => {
                 Shop
               </button>
               <div className={`dropdown-content ${openDropdown === "shop" ? "show" : ""}`}>
-                <a href="#!">United</a>
-                <a href="#!">Canada</a>
-                <a href="#!">Brasil</a>
+                <a href="#!">My Account</a>
+                <a href="#!">Cart</a>
+                <a href="#!">Checkout</a>
+                <a href="#!">Wishlist</a>
+                <a href="#!">Order Tracking</a>
               </div>
             </div>
           </li>
           <li>
             <div className="dropdown">
               <button
-                className="dropbtn"
+                className="dropbtn hover-red"
                 onClick={() => toggleDropdown("pages")}
               >
                 Pages
               </button>
               <div className={`dropdown-content ${openDropdown === "pages" ? "show" : ""}`}>
-                <a href="#!">About</a>
+                <a href="#!">About Us</a>
                 <a href="#!">Contact Us</a>
-                <a href="#!">Store Locator</a>
+                <a href="#!">Login & Register</a>
                 <a href="#!">FAQ</a>
-                <a href="#!">Coming Soon</a>
-                <a href="#!">404</a>
+                <a href="#!">404 Page</a>
+                <a href="#!">Compare</a>
+                <a href="#!">Wishlist</a>
+                <a href="#!">Order Tracking</a>
+                
               </div>
             </div>
           </li>
@@ -136,8 +130,11 @@ const Header = () => {
                 Blog
               </button>
               <div className={`dropdown-content ${openDropdown === "blog" ? "show" : ""}`}>
-                <a href="#!">Docs</a>
-                <a href="#!">Blog Post</a>
+                <a href="#!">Blog Left Sidebar</a>
+                <a href="#!">Blog Right Sidebar</a>
+                <a href="#!">Blog Full Width</a>
+                <a href="#!">Blog Details</a>
+                
               </div>
             </div>
           </li>
@@ -155,10 +152,10 @@ const Header = () => {
                 className="dropbtn"
                 onClick={() => toggleDropdown("country")}
               >
-                United States <span className="arrow"></span>
+                País <span className="arrow"></span>
               </button>
               <div className={`dropdown-content ${openDropdown === "country" ? "show" : ""}`}>
-                <a href="#!">United</a>
+                <a href="#!">United States</a>
                 <a href="#!">Canada</a>
                 <a href="#!">Brasil</a>
               </div>
@@ -168,15 +165,19 @@ const Header = () => {
             <div className="dropdown">
               <button
                 className="dropbtn"
-                onClick={() => toggleDropdown("currency")}
-              >
+                onClick={() => toggleDropdown("currency")} >
                 USD <span className="arrow"></span>
               </button>
-              <div className="dropdown-content">
-                <a href="#!">USD</a>
-                <a href="#!">EUR</a>
-                <a href="#!">GBP</a>
-              
+              <div className={`dropdown-content ${openDropdown === "currency" ? "show" : ""}`}>
+                <a href="#!">
+                  CAD
+                </a>
+                <a href="#!">
+                  BRL
+                </a>
+                <a href="#!">
+                  EUR
+                </a>
               </div>
             </div>
           </li>
@@ -184,9 +185,8 @@ const Header = () => {
             <div className="dropdown">
               <button
                 className="dropbtn"
-                onClick={() => toggleDropdown("language")}
-              >
-                EN <span className="arrow"></span>
+                onClick={() => toggleDropdown("language")}  >
+                English <span className="arrow"></span>
               </button>
               <div className={`dropdown-content ${openDropdown === "language" ? "show" : ""}`}>
                 <a href="#!">Inglês</a>
