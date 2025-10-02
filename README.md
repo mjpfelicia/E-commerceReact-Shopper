@@ -92,15 +92,19 @@ Você nunca é obrigado a usar \`eject\`. O conjunto de funcionalidades curadas 
 \`\`\`
 src/
   components/
-    NovasChegadas/       # Carrossel de novos produtos
-    VeraoPerfeito/       # Seção de looks de verão
-    UltimoBlog/          # Últimas postagens do blog
-    DetalheEntregas/     # Seção de benefícios (frete, devoluções, etc.)
-    Footer/              # Rodapé com links e newsletter
-    img                  # Imagens do projeto
-    icons/               # Ícones em SVG
-  App.js                 # Componente principal
-  index.js               # Ponto de entrada
+  CarrosselPromocao/        # Carrossel de novos produtos
+  CompreAgora/              # Seção de looks de verão
+  CompreComDesconto/
+  ComprePorCategoria/
+  DetalheEntregas/          # Seção de benefícios (frete, devoluções, etc.)
+    Footer/                      # Rodapé com links e newsletter
+    UltimoBlog/             # Últimas postagens do blog
+    NovasChegadas/      
+    VeraoPerfeito/                                           
+    img                     # Imagens do projeto
+    icons/                  # Ícones em SVG
+  App.js                    # Componente principal
+  index.js                  # Ponto de entrada
 \`\`\`
 
 ## Status do Projeto

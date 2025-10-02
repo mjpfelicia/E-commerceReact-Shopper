@@ -3,23 +3,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
 
 :root {
-    /* Cores principais */
+    /* Cores */
     --color-primary: #ff6f61;
-    /* Coral / Vermelho suave */
-    --color-secondary: #111111;
-    /* Preto quase total */
-    --color-bg-header: #ffc107;
-    /* Amarelo do Bootstrap warning */
-    --color-text-header: #ffffff;
-    /* Branco */
-    --color-bg-menu: #ffffff;
-    /* Branco para menu */
-    --color-text-menu: #111111;
-    /* Texto escuro para menu */
-    --color-hover: var(--color-primary);
-    /* Cor hover para links */
-
+    --color-secondary: #333;
+    --color-bg-menu: #f8f8f8;
+    --color-text-menu: #555;
+    --color-text-header: #fff;
+    --color-hover: #ff3b2e;
+    --color-accent: #ffcccb;    
+    --color-success: #4CAF50;
+    --color-error: #f44336;
+    --color-warning: #ff9800;
+    --color-info: #2196F3;
+    --color-light: #f4f4f4;
+    --color-dark: #222;
+    --color-border: #ddd;
+    --color-background: #fff;
     --font-family-base: 'Jost', sans-serif;
+    
 
     /* Tamanhos e espaçamentos */
     --padding-top-header: 20px;

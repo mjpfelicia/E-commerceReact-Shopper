@@ -16,6 +16,7 @@
   color: var(--color-text-header);
   text-align: center;
   font-family: var(--font-family-base);
+  color: white;
 }
 
 /* ===== Ícones mobile ===== */
@@ -29,9 +30,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 100px;
+  height: 80px;
   background-color: var(--color-bg-menu);
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 ul {
@@ -39,6 +41,8 @@ ul {
   gap: 20px !important;
   padding: 0;
   margin: 0;
+  align-items: center;
+
 }
 
 /* ===== Itens de menu ===== */
@@ -46,10 +50,11 @@ li {
   font-weight: var(--font-weight-regular);
   font-family: var(--font-family-base);
   color: var(--color-text-menu);
+  list-style: none;
 }
 
 .titulo-shopper {
-  font-size: 2em;
+  font-size: 1em;
   font-weight: var(--font-weight-black);
   font-family: var(--font-family-base);
   color: var(--color-secondary);
@@ -96,7 +101,7 @@ li {
 
 /* Seta com CSS */
 .arrow {
-  border: solid var(--color-text-menu);
+  border: solid black;
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 4px;
@@ -139,6 +144,7 @@ li {
     display: none;
   }
 }
+
 @media (max-width: 768px) {
   .img-mobile {
     display: block;
@@ -158,4 +164,126 @@ li {
   li {
     font-size: 1.5em;
   }
+}
+
+/* Adicione isto ao seu Header.css existente */
+
+/* Corrige o display do menu mobile */
+@media (max-width: 600px) {
+  .menu-display {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .menu:not(.menu-display) {
+    display: none;
+  }
+}
+
+/* Melhora a acessibilidade do menu icon */
+.menu-icon {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.menu-icon:focus {
+  outline: 2px solid #007bff;
+}
+
+/* Dropdowns com melhor suporte mobile */
+.dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.dropdown-content.show {
+  max-height: 300px;
+}
+
+/* Ícones interativos */
+.icon-header img {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon-header img:hover {
+  transform: scale(1.1);
+}
+
+.icon-header img:focus {
+  outline: 2px solid #007bff;
+  border-radius: 3px;
+}
+
+
+
+
+/* ===== Menu Icon (Hamburger) ===== */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 10px;
+  gap: 4px;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  transition: 0.3s;
+}
+
+.menu-icon.change .bar1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-icon.change .bar2 {
+  opacity: 0;
+}
+
+.menu-icon.change .bar3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+
+  /* Esconde o menu por padrão no mobile */
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    position: absolute;
+    left: 0;
+    right: 24px;
+    z-index: 1000;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-bg-menu);
+  }
+
+  .titulo-shopper {
+    display: none;
+  }
+
+  /* Mostra o menu quando menu-display está ativo */
+  .menu.menu-display {
+    display: flex !important;
+    background-color: white;
+  }
+
+  .menu-icon {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    z-index: 1100;
+
+  }
+
+
 }

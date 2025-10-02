@@ -119,11 +119,16 @@
 }
 
 .link-coluna-footer1 {
-    display: flex;
+       display: flex
+;
     flex-direction: column;
     list-style: none;
     padding: 0;
     margin: 0;
+    align-items: flex-start;
+    justify-content: center;
+
+
 }
 
 .link-coluna-footer1 li a {

@@ -83,8 +83,8 @@
 .btn {
     display: inline-flex;
     align-items: center;
-    background-color: #000;
-    color: #fff;
+    color: var(--color-dark);
+    background-color:transparent;
     padding: 10px 16px;
     border-radius: 6px;
     cursor: pointer;
@@ -95,6 +95,7 @@
 .btn:hover {
      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
+  color: white;
 
 }
 

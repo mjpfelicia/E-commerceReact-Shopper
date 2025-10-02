@@ -1,18 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom"; // ← ADICIONAR ESTA IMPORT
 import "./Header.css";
 import userIcon from '../../img/user-regular.svg';
 import commentIcon from '../../img/comment-regular.svg';
 import heartIcon from '../../img/heart-regular.svg';
 import cartIcon from '../../img/shopping-cart-solid.svg';
 
-
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const headerRef = useRef(null);
+
+  // Fecha dropdowns quando clica fora
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
+        setOpenDropdown(null);
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   // Alterna menu mobile
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+    // Fecha dropdowns quando abre/fecha menu mobile
+    if (!menuOpen) {
+      setOpenDropdown(null);
+    }
   };
 
   // Alterna dropdowns
@@ -24,185 +44,210 @@ const Header = () => {
     }
   };
 
+  // Fecha menu mobile quando um link é clicado
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+    setOpenDropdown(null);
+  };
+
+  // Dados para os dropdowns principais
+  const mainDropdowns = [
+    {
+      name: "home",
+      label: "Home",
+      items: [
+        "Main Home", "Fashion Home", "Furniture Home", "Electronics Home",
+        "Beauty Home", "Kids Home", "Sport Home", "Book Store",
+        "Music Store", "Flower Shop", "Single Product"
+      ]
+    },
+    {
+      name: "catalog",
+      label: "Catalog",
+      items: [
+        "Shop Grid", "Shop List", "Shop Right Sidebar", "Product Details",
+        "Product Variable", "Product Grouped", "Product Affiliate"
+      ]
+    },
+    {
+      name: "shop",
+      label: "Shop",
+      items: ["My Account", "Cart", "Checkout", "Wishlist", "Order Tracking"]
+    },
+    {
+      name: "pages",
+      label: "Pages",
+      items: [
+        "About Us", "Contact Us", "Login & Register", "FAQ", "404 Page",
+        "Compare", "Wishlist", "Order Tracking"
+      ]
+    },
+    {
+      name: "blog",
+      label: "Blog",
+      items: [
+        "Blog Left Sidebar", "Blog Right Sidebar", "Blog Full Width", "Blog Details"
+      ]
+    }
+  ];
+
+  // Dados para dropdowns utilitários
+  const utilityDropdowns = [
+    {
+      name: "country",
+      label: "País",
+      items: ["United States", "Canada", "Brasil"]
+    },
+    {
+      name: "currency",
+      label: "USD",
+      items: ["CAD", "BRL", "EUR"]
+    },
+    {
+      name: "language",
+      label: "English",
+      items: ["Inglês", "Francs", "German"]
+    }
+  ];
+
+  // Ícones com navegação
+  const headerIcons = [
+    { 
+      icon: userIcon, 
+      alt: "User", 
+      to: "/login", 
+      title: "Minha Conta" 
+    },
+    { 
+      icon: commentIcon, 
+      alt: "Comment", 
+      to: "/contato", 
+      title: "Contato" 
+    },
+    { 
+      icon: heartIcon, 
+      alt: "Heart", 
+      to: "/favoritos", 
+      title: "Favoritos" 
+    },
+    { 
+      icon: cartIcon, 
+      alt: "Shopping Cart", 
+      to: "/carrinho", 
+      title: "Carrinho de Compras" 
+    }
+  ];
+
   return (
-    <header>
-      <header>
-        <div className="logo-happy">
-          <p className="titulo-happy">⚡️ OFERTAS DE FÉRIAS FELIZES EM TUDO ⚡️</p>
-        </div>
-      </header>
+    <header ref={headerRef}>
+      {/* Banner superior */}
+      <div className="logo-happy">
+        <p className="titulo-happy">⚡️ OFERTAS DE FÉRIAS FELIZES EM TUDO ⚡️</p>
+      </div>
 
       {/* Ícone menu mobile */}
-      <a href="#!" className="icon" onClick={toggleMenu}>
-        <img className="img-mobile" src="./img/bars-solid.svg" alt="menu" />
-      </a>
+      <div 
+        className={`menu-icon ${menuOpen ? "change" : ""}`} 
+        onClick={toggleMenu} 
+        role="button" 
+        tabIndex={0} 
+        onKeyDown={(e) => e.key === 'Enter' && toggleMenu()}
+        aria-label="Toggle menu"
+      >
+        <div className="bar1"></div>
+        <div className="bar2"></div>
+        <div className="bar3"></div>
+      </div>
 
-      {/* Menu */}
+      {/* Menu principal */}
       <nav className={`menu ${menuOpen ? "menu-display" : ""}`} id="menu-mobile">
         <ul>
-          <li>
-            <div className="dropdown">
-              <button
-                className="dropbtn hover-red" 
-                onClick={() => toggleDropdown("home")}
-              >
-                Home
-              </button>
-              <div className={`dropdown-content ${openDropdown === "home" ? "show" : ""}`}>
-                <a href="#!">Main Home</a>
-                <a href="#!">Fashion Home</a>
-                <a href="#!">Furniture Home</a>
-                <a href="#!">Electronics Home</a>
-                <a href="#!">Beauty Home</a>
-                <a href="#!">Kids Home</a>
-                <a href="#!">Sport Home</a>
-                <a href="#!">Book Store</a>
-                <a href="#!">Music Store</a>
-                <a href="#!">Flower Shop</a>
-                <a href="#!">Single Product</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="dropdown">
-              <button
-                className="dropbtn hover-red"
-                onClick={() => toggleDropdown("catalog")}
-              >
-                Catalog
-              </button>
-              <div className={`dropdown-content ${openDropdown === "catalog" ? "show" : ""}`}>
-                <a href="#!">Shop Grid</a>
-                <a href="#!">Shop List</a>
-                <a href="#!">Shop Right Sidebar</a>
-                <a href="#!">Product Details</a>
-                <a href="#!">Product Variable</a>
-                <a href="#!">Product Grouped</a>
-                <a href="#!">Product Affiliate</a>
-              </div>
+            
+          
 
-            </div>
-          </li>
-          <li>
-            <div className="dropdown">
-              <button
-                className="dropbtn hover-red"
-                onClick={() => toggleDropdown("shop")}
-              >
-                Shop
-              </button>
-              <div className={`dropdown-content ${openDropdown === "shop" ? "show" : ""}`}>
-                <a href="#!">My Account</a>
-                <a href="#!">Cart</a>
-                <a href="#!">Checkout</a>
-                <a href="#!">Wishlist</a>
-                <a href="#!">Order Tracking</a>
+          {/* Dropdowns principais */}
+          {mainDropdowns.map((dropdown) => (
+            <li key={dropdown.name}>
+              <div className="dropdown">
+                <button
+                  className="dropbtn hover-red"
+                  onClick={() => toggleDropdown(dropdown.name)}
+                  aria-expanded={openDropdown === dropdown.name}
+                >
+                  {dropdown.label}
+                </button>
+                <div className={`dropdown-content ${openDropdown === dropdown.name ? "show" : ""}`}>
+                  {dropdown.items.map((item, index) => (
+                    <a 
+                      key={index} 
+                      href="#!" 
+                      onClick={handleLinkClick}
+                      onKeyDown={(e) => e.key === 'Enter' && handleLinkClick()}
+                    >
+                      {item}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
-          </li>
-          <li>
-            <div className="dropdown">
-              <button
-                className="dropbtn hover-red"
-                onClick={() => toggleDropdown("pages")}
-              >
-                Pages
-              </button>
-              <div className={`dropdown-content ${openDropdown === "pages" ? "show" : ""}`}>
-                <a href="#!">About Us</a>
-                <a href="#!">Contact Us</a>
-                <a href="#!">Login & Register</a>
-                <a href="#!">FAQ</a>
-                <a href="#!">404 Page</a>
-                <a href="#!">Compare</a>
-                <a href="#!">Wishlist</a>
-                <a href="#!">Order Tracking</a>
-                
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="dropdown">
-              <button
-                className="dropbtn hover-red"
-                onClick={() => toggleDropdown("blog")}
-              >
-                Blog
-              </button>
-              <div className={`dropdown-content ${openDropdown === "blog" ? "show" : ""}`}>
-                <a href="#!">Blog Left Sidebar</a>
-                <a href="#!">Blog Right Sidebar</a>
-                <a href="#!">Blog Full Width</a>
-                <a href="#!">Blog Details</a>
-                
-              </div>
-            </div>
-          </li>
+            </li>
+          ))}
+
+          {/* Docs (sem dropdown) */}
           <li>
             <div className="dropdown">
               <button className="dropbtn hover-red">Docs</button>
             </div>
           </li>
+
+          {/* Logo Shopper */}
           <li>
             <div className="titulo-shopper">Shopper.</div>
           </li>
-          <li>
-            <div className="dropdown">
-              <button
-                className="dropbtn"
-                onClick={() => toggleDropdown("country")}
-              >
-                País <span className="arrow"></span>
-              </button>
-              <div className={`dropdown-content ${openDropdown === "country" ? "show" : ""}`}>
-                <a href="#!">United States</a>
-                <a href="#!">Canada</a>
-                <a href="#!">Brasil</a>
+
+          {/* Dropdowns utilitários */}
+          {utilityDropdowns.map((dropdown) => (
+            <li key={dropdown.name}>
+              <div className="dropdown">
+                <button
+                  className="dropbtn"
+                  onClick={() => toggleDropdown(dropdown.name)}
+                  aria-expanded={openDropdown === dropdown.name}
+                >
+                  {dropdown.label} <span className="arrow"></span>
+                </button>
+                <div className={`dropdown-content ${openDropdown === dropdown.name ? "show" : ""}`}>
+                  {dropdown.items.map((item, index) => (
+                    <a 
+                      key={index} 
+                      href="#!"
+                      onClick={handleLinkClick}
+                      onKeyDown={(e) => e.key === 'Enter' && handleLinkClick()}
+                    >
+                      {item}
+                    </a>
+                  ))}
+                </div>
               </div>
-            </div>
-          </li>
-          <li>
-            <div className="dropdown">
-              <button
-                className="dropbtn"
-                onClick={() => toggleDropdown("currency")} >
-                USD <span className="arrow"></span>
-              </button>
-              <div className={`dropdown-content ${openDropdown === "currency" ? "show" : ""}`}>
-                <a href="#!">
-                  CAD
-                </a>
-                <a href="#!">
-                  BRL
-                </a>
-                <a href="#!">
-                  EUR
-                </a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className="dropdown">
-              <button
-                className="dropbtn"
-                onClick={() => toggleDropdown("language")}  >
-                English <span className="arrow"></span>
-              </button>
-              <div className={`dropdown-content ${openDropdown === "language" ? "show" : ""}`}>
-                <a href="#!">Inglês</a>
-                <a href="#!">Francs</a>
-                <a href="#!">German</a>
-              </div>
-            </div>
-          </li>
+            </li>
+          ))}
+
+          {/* Ícones com navegação - ATUALIZADO */}
           <li>
             <div className="icon-header icon-img">
-              <img src={userIcon} alt="User" />
-              <img src={commentIcon} alt="Comment" />
-              <img src={heartIcon} alt="Heart" />
-              <img src={cartIcon} alt="Shopping Cart" />
-
-
+              {headerIcons.map((item, index) => (
+                <Link
+                  key={index}
+                  to={item.to}
+                  onClick={handleLinkClick}
+                  title={item.title}
+                  className="icon-link"
+                >
+                  <img 
+                    src={item.icon} 
+                    alt={item.alt}
+                  />
+                </Link>
+              ))}
             </div>
           </li>
         </ul>
