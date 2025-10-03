@@ -13,16 +13,9 @@
 }
 
 .titulo-happy {
-  color: var(--color-text-header);
+  color: white;
   text-align: center;
   font-family: var(--font-family-base);
-  color: white;
-}
-
-/* ===== Ícones mobile ===== */
-.img-mobile {
-  width: 30px;
-  display: none;
 }
 
 /* ===== Menu ===== */
@@ -36,17 +29,16 @@
   font-weight: bold;
 }
 
-ul {
+.menu ul {
   display: flex;
-  gap: 20px !important;
+  gap: 10px;
   padding: 0;
   margin: 0;
   align-items: center;
-
 }
 
 /* ===== Itens de menu ===== */
-li {
+.menu li {
   font-weight: var(--font-weight-regular);
   font-family: var(--font-family-base);
   color: var(--color-text-menu);
@@ -68,7 +60,8 @@ li {
 /* ===== Ícones no header ===== */
 .icon-header {
   cursor: pointer;
-  margin-top: .9em;
+  display: flex;
+  gap: 10px;
 }
 
 .icon-header:hover {
@@ -78,6 +71,17 @@ li {
 .icon-header img {
   width: 20px;
   height: 15px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.icon-header img:hover {
+  transform: scale(1.1);
+}
+
+.icon-header img:focus {
+  outline: 2px solid #007bff;
+  border-radius: 3px;
 }
 
 /* ===== Dropdown ===== */
@@ -97,6 +101,8 @@ li {
   display: flex;
   align-items: center;
   gap: 6px;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 /* Seta com CSS */
@@ -108,6 +114,7 @@ li {
   margin-left: 4px;
   transform: rotate(45deg);
   vertical-align: middle;
+  transition: transform 0.3s ease;
 }
 
 /* Dropdown conteúdo */
@@ -119,7 +126,15 @@ li {
   background-color: #f9f9f9;
   box-shadow: var(--shadow-dropdown);
   border-radius: var(--border-radius);
-  z-index: 1;
+  z-index: 1000;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.dropdown-content.show {
+  display: block;
+  max-height: 500px;
 }
 
 .dropdown-content a {
@@ -127,97 +142,19 @@ li {
   display: block;
   text-decoration: none;
   color: #a6a6a6;
+  transition: all 0.3s ease;
 }
 
 .dropdown-content a:hover {
   background-color: #eee;
+  color: var(--color-hover);
 }
 
 /* Mostrar dropdown ao hover */
 .dropdown:hover .dropdown-content {
   display: block;
+  max-height: 500px;
 }
-
-/* ===== Responsividade ===== */
-@media (max-width: 600px) {
-  .menu-display {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .img-mobile {
-    display: block;
-  }
-
-  .menu {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-  }
-
-  ul {
-    flex-direction: column;
-    gap: 10px !important;
-  }
-
-  li {
-    font-size: 1.5em;
-  }
-}
-
-/* Adicione isto ao seu Header.css existente */
-
-/* Corrige o display do menu mobile */
-@media (max-width: 600px) {
-  .menu-display {
-    display: flex !important;
-    flex-direction: column;
-  }
-
-  .menu:not(.menu-display) {
-    display: none;
-  }
-}
-
-/* Melhora a acessibilidade do menu icon */
-.menu-icon {
-  cursor: pointer;
-  padding: 10px;
-}
-
-.menu-icon:focus {
-  outline: 2px solid #007bff;
-}
-
-/* Dropdowns com melhor suporte mobile */
-.dropdown-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-
-.dropdown-content.show {
-  max-height: 300px;
-}
-
-/* Ícones interativos */
-.icon-header img {
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.icon-header img:hover {
-  transform: scale(1.1);
-}
-
-.icon-header img:focus {
-  outline: 2px solid #007bff;
-  border-radius: 3px;
-}
-
-
-
 
 /* ===== Menu Icon (Hamburger) ===== */
 .menu-icon {
@@ -226,6 +163,13 @@ li {
   cursor: pointer;
   padding: 10px;
   gap: 4px;
+  position: absolute;
+ 
+  z-index: 1100;
+}
+
+.menu-icon:focus {
+  outline: 2px solid #007bff;
 }
 
 .bar1,
@@ -251,7 +195,6 @@ li {
 
 /* ===== Responsividade ===== */
 @media (max-width: 768px) {
-
   /* Esconde o menu por padrão no mobile */
   .menu {
     display: none;
@@ -260,30 +203,83 @@ li {
     height: auto;
     position: absolute;
     left: 0;
-    right: 24px;
+    right: 0;
+    background-color: white;
     z-index: 1000;
     padding: 1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: var(--color-bg-menu);
+  }
+
+  /* Mostra o menu quando menu-display está ativo */
+  .menu.menu-display {
+    display: flex !important;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  .menu li {
+    width: 100%;
+    padding: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropbtn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 15px 0;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    width: 100%;
+    margin-top: 0;
   }
 
   .titulo-shopper {
     display: none;
   }
 
-  /* Mostra o menu quando menu-display está ativo */
-  .menu.menu-display {
-    display: flex !important;
-    background-color: white;
+  .icon-header {
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+    gap: 25px;
   }
 
-  .menu-icon {
-    display: flex;
-    position: absolute;
-    right: 20px;
-    z-index: 1100;
-
+  .icon-header img {
+    width: 24px;
+    height: 18px;
   }
+}
 
-
+@media (max-width: 480px) {
+  .logo-happy {
+    height: 50px;
+  }
+  
+  .titulo-happy {
+    font-size: 0.8em;
+  }
+  
+  .menu {
+    padding: 0.5rem;
+  }
+  
+  .menu li {
+    font-size: 1em;
+  }
 }
